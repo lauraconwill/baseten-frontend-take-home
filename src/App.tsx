@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { Instructions } from "./Instructions";
+import { Header } from "./Header";
 import { Placeholder } from "./Placeholder";
 import { Trigger } from "./Trigger";
 import { SelectedOutput } from "./SelectedOutput";
@@ -13,15 +13,13 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Instructions />
-      <div className="Implementation">
+    <div className="Wrapper">
+      <Header />
+      <div className="SearchWrapper">
         <Trigger onTrigger={handleTrigger} />
-
+        <SelectedOutput selected={selected} />
         {/* Replace the Placeholder component below with your implementation */}
         <Placeholder />
-
-        <SelectedOutput selected={selected} />
       </div>
     </div>
   );
