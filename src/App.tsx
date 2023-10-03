@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import { Header } from "./Header";
-import { Placeholder } from "./Placeholder";
 import { Trigger } from "./Trigger";
-import { SelectedOutput } from "./SelectedOutput";
+import { QuickSearch } from "./QuickSearch";
 
 function App() {
-  const [selected, setSelected] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
   function handleTrigger() {
-    setSelected("No implementation; unhandled trigger");
+    setShowSearch(!showSearch);
   }
 
   return (
@@ -17,9 +16,7 @@ function App() {
       <Header />
       <div className="SearchWrapper">
         <Trigger onTrigger={handleTrigger} />
-        <SelectedOutput selected={selected} />
-        {/* Replace the Placeholder component below with your implementation */}
-        <Placeholder />
+        {showSearch && <QuickSearch />}
       </div>
     </div>
   );
