@@ -4,7 +4,7 @@ type TriggerProps = {
   onTrigger: () => void;
 };
 
-export const Trigger: FunctionComponent<TriggerProps> = ({ onTrigger }) => {
+const Trigger: FunctionComponent<TriggerProps> = ({ onTrigger }) => {
   return (
     <div className="Trigger">
       <button
@@ -17,3 +17,5 @@ export const Trigger: FunctionComponent<TriggerProps> = ({ onTrigger }) => {
     </div>
   );
 };
+
+export default Trigger;

@@ -4,7 +4,7 @@ type SelectedResultProps = {
   selected?: string;
 };
 
-export const SelectedResult: FunctionComponent<SelectedResultProps> = ({
+const SelectedResult: FunctionComponent<SelectedResultProps> = ({
   selected = "Nothing selected",
 }) => {
   // TODO: Figure out how we want to handle when nothing is selected
@@ -16,3 +16,5 @@ export const SelectedResult: FunctionComponent<SelectedResultProps> = ({
     </div>
   );
 };
+
+export default SelectedResult;

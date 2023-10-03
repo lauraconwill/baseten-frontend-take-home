@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import { Header } from "./Header";
-import { Trigger } from "./Trigger";
-import { QuickSearch } from "./QuickSearch";
+import Header from "./Header";
+import Trigger from "./Trigger";
+import QuickSearch from "./QuickSearch";
 
 function App() {
   const [showSearch, setShowSearch] = useState(false);
