@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { Model, ModelWithAuthor } from "./types";
+import { Model } from "./types";
 
 const MODELS = [
   {
@@ -577,7 +577,7 @@ const MODELS = [
   },
 ];
 
-const fuse = new Fuse<Model | ModelWithAuthor>(MODELS, {
+const fuse = new Fuse<Model>(MODELS, {
   keys: ["id", "author", "type"],
 });
 

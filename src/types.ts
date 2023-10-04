@@ -2,13 +2,10 @@ export interface Model {
   id: string;
   modified: number;
   type: string;
-}
-
-export interface ModelWithAuthor extends Model {
-  author: string;
+  author?: string;
 }
 
 export interface SearchResultEntity {
-  item: Model | ModelWithAuthor;
+  item: Model;
   refIndex: number;
 }

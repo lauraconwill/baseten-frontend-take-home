@@ -1,4 +1,5 @@
 import React, { FunctionComponent, memo } from "react";
+import SearchResult from "./SearchResult";
 import { SearchResultEntity } from "./types";
 
 interface SearchResultsProps {
@@ -11,9 +12,27 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
   return (
     <div className="SearchResults">
       {searchResults.length > 0 ? (
-        searchResults.map((searchResult) => (
-          <div key={searchResult.item.id}>{searchResult.item.id}</div>
-        ))
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Modified</th>
+              <th>Type</th>
+              <th>Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            {searchResults.map((searchResult) => {
+              const { item: searchResultItem } = searchResult;
+              return (
+                <SearchResult
+                  key={searchResultItem?.id}
+                  searchResultItem={searchResultItem}
+                />
+              );
+            })}
+          </tbody>
+        </table>
       ) : (
         <div>No results</div>
       )}
