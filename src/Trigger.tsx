@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react";
 
-type TriggerProps = {
+interface TriggerProps {
   onTrigger: () => void;
-};
+}
 
 const Trigger: FunctionComponent<TriggerProps> = ({ onTrigger }) => {
   return (

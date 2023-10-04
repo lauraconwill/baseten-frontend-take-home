@@ -1,4 +1,5 @@
 import Fuse from "fuse.js";
+import { Model, ModelWithAuthor } from "./types";
 
 const MODELS = [
   {
@@ -576,11 +577,15 @@ const MODELS = [
   },
 ];
 
-const fuse = new Fuse(MODELS, {
+const fuse = new Fuse<Model | ModelWithAuthor>(MODELS, {
   keys: ["id", "author", "type"],
 });
 
 function search(term: string) {
+  if (!term) {
+    return [];
+  }
+
   return fuse.search(term);
 }
 

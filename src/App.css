@@ -68,6 +68,17 @@
   content: "Search Results";
 }
 
+.SearchInput > button,
+.SearchInput > input {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 20px;
+}
+
+.SearchInput > input {
+  margin-right: 8px;
+}
+
 .Trigger {
   margin: 24px auto;
 }

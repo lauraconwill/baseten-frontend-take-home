@@ -1,10 +1,29 @@
-import React, { FunctionComponent } from "react";
+import React, {
+  FunctionComponent,
+  ChangeEventHandler,
+  FormEventHandler,
+} from "react";
 
-const SearchInput: FunctionComponent = () => {
+interface SearchInputProps {
+  searchTerm?: string | undefined;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  handleSearch: FormEventHandler<HTMLFormElement>;
+}
+
+const SearchInput: FunctionComponent<SearchInputProps> = ({
+  searchTerm = "",
+  onChange,
+  handleSearch,
+}) => {
   return (
-    <div className="SearchInput">
-      TODO: Implement displaying search input form
-    </div>
+    <form className="SearchInput" onSubmit={handleSearch}>
+      <input
+        id="search-term-field"
+        value={searchTerm}
+        onChange={onChange}
+      ></input>
+      <button>Search</button>
+    </form>
   );
 };
 

@@ -1,11 +1,24 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, memo } from "react";
+import { SearchResultEntity } from "./types";
 
-const SearchResults: FunctionComponent = () => {
+interface SearchResultsProps {
+  searchResults: Array<SearchResultEntity>;
+}
+
+const SearchResults: FunctionComponent<SearchResultsProps> = ({
+  searchResults,
+}) => {
   return (
     <div className="SearchResults">
-      TODO: Implement displaying search results
+      {searchResults.length > 0 ? (
+        searchResults.map((searchResult) => (
+          <div key={searchResult.item.id}>{searchResult.item.id}</div>
+        ))
+      ) : (
+        <div>No results</div>
+      )}
     </div>
   );
 };
 
-export default SearchResults;
+export default memo(SearchResults);
