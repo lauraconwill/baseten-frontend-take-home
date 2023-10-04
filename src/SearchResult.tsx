@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { DateTime } from "luxon";
 import { Model } from "./types";
 
 interface SearchResultProps {
@@ -10,12 +11,15 @@ const SearchResult: FunctionComponent<SearchResultProps> = ({
   searchResultItem,
 }) => {
   const { id, modified, type, author } = searchResultItem;
+
+  const formattedDate = DateTime.fromMillis(modified).toFormat("L/d/yy t");
+
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{modified} </td>
+    <tr className="SearchResult">
+      <td title={id}>{id}</td>
+      <td>{formattedDate} </td>
       <td>{type}</td>
-      <td>{author ?? "!!! no author !!!"}</td>
+      <td>{author ?? "---"}</td>
     </tr>
   );
 };

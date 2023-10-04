@@ -16,7 +16,7 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
           <thead>
             <tr>
               <th>ID</th>
-              <th>Modified</th>
+              <th>Last Modified</th>
               <th>Type</th>
               <th>Author</th>
             </tr>

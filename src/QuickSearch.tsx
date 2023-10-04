@@ -33,7 +33,7 @@ const QuickSearch: FunctionComponent = () => {
   };
 
   return (
-    <>
+    <div className="QuickSearch">
       <SelectedResult />
       <SearchInput
         searchTerm={searchTerm}
@@ -41,7 +41,7 @@ const QuickSearch: FunctionComponent = () => {
         handleSearch={handleSearch}
       />
       <SearchResults searchResults={searchResults} />
-    </>
+    </div>
   );
 };
 

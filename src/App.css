@@ -9,10 +9,10 @@
 
 .Header {
   display: flex;
-  margin: 32px;
+  margin: 32px 0px;
   justify-content: space-between;
   align-items: center;
-  width: 600px;
+  width: 940px;
 }
 
 .Header > .Logo {
@@ -39,13 +39,13 @@
 .SearchInput,
 .SearchResults {
   position: relative;
-  padding: 48px;
+  padding: 8px;
   margin: 12px 0px;
-  border: 3px dashed #888;
-  border-radius: 10px;
+  border: 1px solid #888;
+  border-radius: 4px;
   font-style: italic;
   color: #666;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .SearchInput::before,
@@ -58,14 +58,6 @@
   color: #000;
   border-radius: 2px;
   font-style: normal;
-}
-
-.SearchInput::before {
-  content: "Search Input";
-}
-
-.SearchResults::before {
-  content: "Search Results";
 }
 
 .SearchInput > button,
@@ -89,7 +81,7 @@
 }
 
 .SelectedResult {
-  margin: 16px 0px;
+  margin: 16px 0px 32px 0px;
   width: 480px;
 }
 
@@ -101,4 +93,24 @@
 
 .SelectedResult > p:last-child {
   font-style: italic;
+}
+
+.QuickSearch {
+  width: 940px;
+}
+
+.SearchResult > td {
+  width: 340px;
+  padding: 2px 8px 2px 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.SearchResult > td:first-child {
+  width: 640px;
+}
+
+th {
+  text-align: left;
 }

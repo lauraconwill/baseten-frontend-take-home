@@ -585,8 +585,13 @@ function search(term: string) {
   if (!term) {
     return [];
   }
+  const results = fuse.search(term);
 
-  return fuse.search(term);
+  results.sort((a, b) => {
+    return b.item.modified - a.item.modified;
+  });
+
+  return results;
 }
 
 export { search };
