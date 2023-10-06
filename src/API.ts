@@ -590,6 +590,9 @@ function search(term: string) {
    */
   const results = fuse.search(term).map((res) => res.item);
 
+  /**
+   * Sort by most recently modified in descening order
+   */
   results.sort((a, b) => {
     return b.modified - a.modified;
   });

@@ -23,9 +23,9 @@ const QuickSearch: FunctionComponent = () => {
 
   const [searchResults, setSearchResults] = useState<Array<Model>>([]);
 
-  const handleTrigger = () => {
+  const handleTrigger = useCallback(() => {
     setShowSearch(!showSearch);
-  };
+  }, [showSearch]);
 
   const handleOnChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -47,6 +47,7 @@ const QuickSearch: FunctionComponent = () => {
    */
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      /* `metaKey` is the command key on Mac */
       if (event.ctrlKey === true || event.metaKey === true) {
         if (event.key === "k") {
           setShowSearch(true);
