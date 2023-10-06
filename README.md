@@ -2,7 +2,7 @@
 
 This project mimics the functionality of Spotlight search on Mac OS. It is launched by a Trigger button and allows for searching for ML models, accessed via an API endpoint. Results can be selected by clicking or using keyboard shortcuts.
 
-![spotlight](spotlight.png)
+![screenshot](ml_model_search_screenshot.png)
 
 ## Assignment Requirements
 
@@ -38,8 +38,6 @@ $ npm run start
 4. The project will be running locally at http://localhost:3000/.
 
 ## Technical Design Decisions
-
-![screenshot](ml_model_search_screenshot.png)
 
 - I introduced a search context provider because the `selected` and `setSelected` state methods were called from various components in the app. Using context would be more necessary if the state was used in multiple layers of nested components, but even here it’s helpful for code cleanliness.
 - I used the Luxon library for displaying the last modified date. Although there’s just one place in which it’s called, it’s easier to understand than a custom date function would be. It also provides localization (e.g. saying 2:00 PM versus 14:00), which would be helpful if this app was used in production.
