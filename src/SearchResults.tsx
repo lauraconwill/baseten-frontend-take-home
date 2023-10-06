@@ -9,10 +9,10 @@ import React, {
 import SearchResult from "./SearchResult";
 import { SearchContext } from "./SearchProvider";
 
-import { SearchResultEntity } from "./types";
+import { Model } from "./types";
 
 interface SearchResultsProps {
-  searchResults: Array<SearchResultEntity>;
+  searchResults: Array<Model>;
 }
 
 const SearchResults: FunctionComponent<SearchResultsProps> = ({
@@ -61,11 +61,10 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
           </thead>
           <tbody ref={tbodyRef}>
             {searchResults.map((searchResult) => {
-              const { item: searchResultItem } = searchResult;
               return (
                 <SearchResult
-                  key={searchResultItem?.id}
-                  searchResultItem={searchResultItem}
+                  key={searchResult?.id}
+                  searchResultItem={searchResult}
                   handleKeyDown={handleKeyDown}
                 />
               );

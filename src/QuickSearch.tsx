@@ -12,7 +12,7 @@ import SelectedResult from "./SelectedResult";
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 import { search } from "./API";
-import { SearchResultEntity } from "./types";
+import { Model } from "./types";
 import { SearchContext } from "./SearchProvider";
 
 const QuickSearch: FunctionComponent = () => {
@@ -21,9 +21,7 @@ const QuickSearch: FunctionComponent = () => {
 
   const { setSelected } = useContext(SearchContext);
 
-  const [searchResults, setSearchResults] = useState<Array<SearchResultEntity>>(
-    []
-  );
+  const [searchResults, setSearchResults] = useState<Array<Model>>([]);
 
   const handleTrigger = () => {
     setShowSearch(!showSearch);

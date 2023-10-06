@@ -585,10 +585,13 @@ function search(term: string) {
   if (!term) {
     return [];
   }
-  const results = fuse.search(term);
+  /**
+   * The properties we want to display are all contained within `item`
+   */
+  const results = fuse.search(term).map((res) => res.item);
 
   results.sort((a, b) => {
-    return b.item.modified - a.item.modified;
+    return b.modified - a.modified;
   });
 
   return results;

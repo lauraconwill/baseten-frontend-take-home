@@ -4,8 +4,3 @@ export interface Model {
   type: string;
   author?: string;
 }
-
-export interface SearchResultEntity {
-  item: Model;
-  refIndex: number;
-}
