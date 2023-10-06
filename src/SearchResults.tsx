@@ -21,10 +21,12 @@ const SearchResults: FunctionComponent<SearchResultsProps> = ({
   const tbodyRef = useRef<HTMLTableSectionElement>(null);
   const { setSelected } = useContext(SearchContext);
 
+  /**
+   * Allowing navigation in table by up and down arrows,
+   * and selection by enter key
+   */
   const handleKeyDown = useCallback(
     (event: KeyboardEvent<HTMLTableRowElement>, id: string) => {
-      event.stopPropagation();
-
       const currentRow = tbodyRef.current?.children.namedItem(id);
       switch (event.key) {
         case "ArrowUp":
