@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./Header";
 import Trigger from "./Trigger";
 import QuickSearch from "./QuickSearch";
+import SearchProvider from "./SearchProvider";
 
 function App() {
   const [showSearch, setShowSearch] = useState(false);
@@ -16,7 +17,12 @@ function App() {
       <Header />
       <div className="SearchWrapper">
         <Trigger onTrigger={handleTrigger} />
-        {showSearch && <QuickSearch />}
+
+        {showSearch && (
+          <SearchProvider>
+            <QuickSearch />
+          </SearchProvider>
+        )}
       </div>
     </div>
   );

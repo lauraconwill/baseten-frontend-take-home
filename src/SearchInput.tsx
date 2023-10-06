@@ -14,17 +14,15 @@ const SearchInput: FunctionComponent<SearchInputProps> = ({
   searchTerm = "",
   onChange,
   handleSearch,
-}) => {
-  return (
-    <form className="SearchInput" onSubmit={handleSearch}>
-      <input
-        id="search-term-field"
-        value={searchTerm}
-        onChange={onChange}
-      ></input>
-      <button>Search</button>
-    </form>
-  );
-};
+}) => (
+  <form className="SearchInput" onSubmit={handleSearch}>
+    <input
+      id="search-term-field"
+      value={searchTerm}
+      onChange={onChange}
+    ></input>
+    <button>Search</button>
+  </form>
+);
 
 export default SearchInput;
